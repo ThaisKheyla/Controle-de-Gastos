@@ -1,2 +1,7 @@
-1.1 O que o /init descobriu sozinho sobre o projeto?
-Resposta: Ele identificou que o projeto foi criado com React e Vite e que ainda estava com a estrutura padrão do Vite, sem as funcionalidades de controle de gastos. Também identificou os arquivos principais, os comandos disponíveis e que o projeto usa JavaScript/JSX.
+## Passo 2 · Estrutura
+
+2.1 Quais arquivos o plano criou ou alterou?
+Resposta: O plano propôs criar FormularioGasto.jsx, ListaGastos.jsx e TotalGastos.jsx dentro de src/components. Também propôs alterar App.jsx, App.css e index.css.
+
+2.2 Qual regra do AGENTS.md você viu sendo aplicada?
+Resposta: Vi sendo aplicadas as regras de criar um componente por arquivo, usar nomes e textos em português e não instalar bibliotecas novas.
