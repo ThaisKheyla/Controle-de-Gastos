@@ -12,6 +12,13 @@ function App() {
     setGastos((gastosAtuais) => [...gastosAtuais, gasto])
   }
 
+  // Remove o gasto pelo id; o total é recalculado automaticamente.
+  function removerGasto(id) {
+    setGastos((gastosAtuais) =>
+      gastosAtuais.filter((gasto) => gasto.id !== id),
+    )
+  }
+
   const totalCentavos = gastos.reduce(
     (soma, gasto) => soma + gasto.valorCentavos,
     0,
@@ -28,7 +35,7 @@ function App() {
         <FormularioGasto aoAdicionar={adicionarGasto} />
 
         <div className="painel-gastos">
-          <ListaGastos gastos={gastos} />
+          <ListaGastos gastos={gastos} aoRemover={removerGasto} />
           <TotalGastos totalCentavos={totalCentavos} />
         </div>
       </main>

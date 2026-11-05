@@ -3,7 +3,7 @@ function formatarValor(valorCentavos) {
   return `R$ ${(valorCentavos / 100).toFixed(2).replace('.', ',')}`
 }
 
-function ListaGastos({ gastos = [] }) {
+function ListaGastos({ gastos = [], aoRemover }) {
   return (
     <section className="lista-gastos">
       <h2>Gastos</h2>
@@ -18,7 +18,20 @@ function ListaGastos({ gastos = [] }) {
                 <strong>{gasto.descricao}</strong>
                 <span className="item-categoria">{gasto.categoria}</span>
               </div>
-              <span className="item-valor">{formatarValor(gasto.valorCentavos)}</span>
+
+              <div className="item-acoes">
+                <span className="item-valor">
+                  {formatarValor(gasto.valorCentavos)}
+                </span>
+                <button
+                  type="button"
+                  className="botao-remover"
+                  onClick={() => aoRemover(gasto.id)}
+                  aria-label={`Remover gasto ${gasto.descricao}`}
+                >
+                  Remover
+                </button>
+              </div>
             </li>
           ))}
         </ul>

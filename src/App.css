@@ -161,6 +161,14 @@
   gap: 4px;
 }
 
+.item-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
 .item-categoria {
   color: var(--text);
   font-size: 14px;
@@ -170,6 +178,31 @@
   color: var(--text-h);
   font-weight: 600;
   white-space: nowrap;
+}
+
+.botao-remover {
+  font: inherit;
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid rgba(185, 28, 28, 0.4);
+  border-radius: 6px;
+  background: transparent;
+  color: #b91c1c;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+.botao-remover:hover {
+  border-color: #b91c1c;
+  background: rgba(185, 28, 28, 0.1);
+}
+
+.botao-remover:focus-visible {
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 .total-gastos {

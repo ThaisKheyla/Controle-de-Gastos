@@ -13,3 +13,6 @@ Resposta: Deu R$ 0,30.
 
 M2.2 Por que 0.1 + 0.2 não dá exatamente 0.3 no JavaScript?
 Resposta: Porque números decimais como 0.1 e 0.2 não são representados exatamente em ponto flutuante binário. O app soma valores em centavos inteiros para evitar esse problema no total.
+
+M3.1: “O plano também incluiu estilos para o botão e um aria-label de acessibilidade, que não pedi explicitamente.”
+M3.2: “O app compara o id do gasto; remove o que corresponde e mantém os demais.”
