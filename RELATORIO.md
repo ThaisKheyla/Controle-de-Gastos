@@ -1,6 +1,6 @@
 # Relatório · Controle de Gastos
 
-Nome:
+Nome: Kheyla Thais Quispe Paucara
 Modelo usado: Big Pickle (OpenCode)
 
 ## Passo 1 · AGENTS.md
