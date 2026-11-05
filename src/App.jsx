@@ -6,6 +6,7 @@ import './App.css'
 
 function App() {
   const [gastos, setGastos] = useState([])
+  const [categoriaFiltro, setCategoriaFiltro] = useState('Todas')
 
   // Adiciona um novo gasto ao final da lista.
   function adicionarGasto(gasto) {
@@ -19,7 +20,13 @@ function App() {
     )
   }
 
-  const totalCentavos = gastos.reduce(
+  // A lista e o total usam a mesma lista filtrada.
+  const gastosVisiveis =
+    categoriaFiltro === 'Todas'
+      ? gastos
+      : gastos.filter((gasto) => gasto.categoria === categoriaFiltro)
+
+  const totalCentavos = gastosVisiveis.reduce(
     (soma, gasto) => soma + gasto.valorCentavos,
     0,
   )
@@ -35,7 +42,13 @@ function App() {
         <FormularioGasto aoAdicionar={adicionarGasto} />
 
         <div className="painel-gastos">
-          <ListaGastos gastos={gastos} aoRemover={removerGasto} />
+          <ListaGastos
+            gastos={gastosVisiveis}
+            totalGastos={gastos.length}
+            categoriaSelecionada={categoriaFiltro}
+            aoMudarCategoria={setCategoriaFiltro}
+            aoRemover={removerGasto}
+          />
           <TotalGastos totalCentavos={totalCentavos} />
         </div>
       </main>

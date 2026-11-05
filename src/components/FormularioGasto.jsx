@@ -1,7 +1,5 @@
 import { useState } from 'react'
-
-// Categorias disponíveis para o cadastro de gastos.
-const CATEGORIAS = ['Alimentação', 'Transporte', 'Lazer', 'Outros']
+import { CATEGORIAS } from '../categorias'
 
 // Aceita "12,50" e "12.50", devolvendo o valor em centavos.
 function converterValor(texto) {
