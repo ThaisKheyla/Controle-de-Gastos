@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { carregarGastos, salvarGastos } from './armazenamentoGastos'
 import FormularioGasto from './components/FormularioGasto'
 import ListaGastos from './components/ListaGastos'
 import TotalGastos from './components/TotalGastos'
 import './App.css'
 
 function App() {
-  const [gastos, setGastos] = useState([])
+  // Inicializador preguiçoso: já começa com os gastos salvos no navegador.
+  const [gastos, setGastos] = useState(carregarGastos)
   const [categoriaFiltro, setCategoriaFiltro] = useState('Todas')
+
+  // Grava no localStorage sempre que a lista mudar.
+  useEffect(() => {
+    salvarGastos(gastos)
+  }, [gastos])
 
   // Adiciona um novo gasto ao final da lista.
   function adicionarGasto(gasto) {
