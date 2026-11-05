@@ -1,7 +1,15 @@
-## Passo 2 · Estrutura
+## Missão 1 · Adicionar
 
-2.1 Quais arquivos o plano criou ou alterou?
-Resposta: O plano propôs criar FormularioGasto.jsx, ListaGastos.jsx e TotalGastos.jsx dentro de src/components. Também propôs alterar App.jsx, App.css e index.css.
+M1.1 Como o app trata "12,50" com vírgula? Quem decidiu isso: você ou o agente?
+Resposta: Eu pedi para o app aceitar valores com vírgula, como "12,50", e o agente decidiu como fazer esse tratamento no código.
 
-2.2 Qual regra do AGENTS.md você viu sendo aplicada?
-Resposta: Vi sendo aplicadas as regras de criar um componente por arquivo, usar nomes e textos em português e não instalar bibliotecas novas.
+M1.2 Quantas tool calls a missão usou?
+Resposta:
+
+## Missão 2 · Total
+
+M2.1 Quanto deu 0,10 + 0,20 no app?
+Resposta: Deu R$ 0,30.
+
+M2.2 Por que 0.1 + 0.2 não dá exatamente 0.3 no JavaScript?
+Resposta: Porque números decimais como 0.1 e 0.2 não são representados exatamente em ponto flutuante binário. O app soma valores em centavos inteiros para evitar esse problema no total.

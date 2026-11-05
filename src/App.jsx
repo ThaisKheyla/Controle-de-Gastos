@@ -1,12 +1,22 @@
+import { useState } from 'react'
 import FormularioGasto from './components/FormularioGasto'
 import ListaGastos from './components/ListaGastos'
 import TotalGastos from './components/TotalGastos'
 import './App.css'
 
-// Lista vazia por enquanto; o estado será adicionado nas próximas missões.
-const GASTOS_INICIAIS = []
-
 function App() {
+  const [gastos, setGastos] = useState([])
+
+  // Adiciona um novo gasto ao final da lista.
+  function adicionarGasto(gasto) {
+    setGastos((gastosAtuais) => [...gastosAtuais, gasto])
+  }
+
+  const totalCentavos = gastos.reduce(
+    (soma, gasto) => soma + gasto.valorCentavos,
+    0,
+  )
+
   return (
     <div className="app">
       <header className="cabecalho">
@@ -15,11 +25,11 @@ function App() {
       </header>
 
       <main className="conteudo">
-        <FormularioGasto />
+        <FormularioGasto aoAdicionar={adicionarGasto} />
 
         <div className="painel-gastos">
-          <ListaGastos gastos={GASTOS_INICIAIS} />
-          <TotalGastos total={0} />
+          <ListaGastos gastos={gastos} />
+          <TotalGastos totalCentavos={totalCentavos} />
         </div>
       </main>
     </div>

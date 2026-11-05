@@ -1,6 +1,6 @@
-// Formata um valor numérico no padrão brasileiro: R$ 12,50.
-function formatarValor(valor) {
-  return `R$ ${Number(valor).toFixed(2).replace('.', ',')}`
+// Formata centavos no padrão brasileiro: R$ 12,50.
+function formatarValor(valorCentavos) {
+  return `R$ ${(valorCentavos / 100).toFixed(2).replace('.', ',')}`
 }
 
 function ListaGastos({ gastos = [] }) {
@@ -18,7 +18,7 @@ function ListaGastos({ gastos = [] }) {
                 <strong>{gasto.descricao}</strong>
                 <span className="item-categoria">{gasto.categoria}</span>
               </div>
-              <span className="item-valor">{formatarValor(gasto.valor)}</span>
+              <span className="item-valor">{formatarValor(gasto.valorCentavos)}</span>
             </li>
           ))}
         </ul>

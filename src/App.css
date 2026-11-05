@@ -76,6 +76,15 @@
   outline-offset: 1px;
 }
 
+.mensagem-erro {
+  padding: 10px 12px;
+  border: 1px solid rgba(185, 28, 28, 0.4);
+  border-radius: 8px;
+  background: rgba(185, 28, 28, 0.1);
+  color: #b91c1c;
+  font-size: 15px;
+}
+
 .botao-adicionar {
   font: inherit;
   font-size: 16px;
