@@ -1,0 +1,2 @@
+1.1 O que o /init descobriu sozinho sobre o projeto?
+Resposta: Ele identificou que o projeto foi criado com React e Vite e que ainda estava com a estrutura padrão do Vite, sem as funcionalidades de controle de gastos. Também identificou os arquivos principais, os comandos disponíveis e que o projeto usa JavaScript/JSX.
